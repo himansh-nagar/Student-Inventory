@@ -1,0 +1,1 @@
+web: gunicorn StudentInventry.wsgi --log-file -
