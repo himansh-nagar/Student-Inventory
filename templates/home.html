@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    <section>
+        <div class="all_cards"></div>
+        <table>
+            <thead>
+                <tr>
+                <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="all_cards">
+            {% for N in file.data %}
+                {% for k ,v in N.items %}
+                            <tr>
+                            <th scope="row"></th>
+                            <td><div  class="card_container" >
+                                <div class="one_card">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Person" class="card__image"> 
+                                <p  class="card__name" >{{k}}</p>
+                                <div class="grid-container">
+                                <button class="btn draw-border"> <a href="{% url 'profile'  k  %}">View Profile</a> </button>
+                                </div>
+                            </div>
+                            </td>
+                             </tr>
+
+                {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        </section>
+    
+{% endblock content %}

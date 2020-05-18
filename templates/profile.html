@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-6">
+        <div class="mb-2">
+          <img class="w-100" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+        </div>
+        <div class="mb-2 d-flex">
+          <h4 class="font-weight-normal"> {{Studentname}} </h4>
+          <div class="social d-flex ml-auto">
+            <p class="pr-2 font-weight-normal">Follow on Git:</p>
+            <a href="#" class="text-muted">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        {% for D in file.data %}
+          {% for K,V in D.items %}
+            {% if K == Studentname %}
+              {% for Vl in V  %}
+                {% for key , val in Vl.items %}
+                  <div class="mb-2">
+                    <ul class="list-unstyled">
+                      <li class="media">
+                        <span class="w-25 text-black font-weight-bold  "> {{ key }} : </span>
+                        <p class="media-body ">   {{val}}</p>
+                      </li>
+            
+                    </ul> 
+                </div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>    
+{% endblock content %}
